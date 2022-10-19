@@ -1,0 +1,9 @@
+html,body {
+    background: pink;
+    color:blue;
+}
+p{
+    margin:auto;
+    font-family: Arial;
+    text-align: left;
+}
