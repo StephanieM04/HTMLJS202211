@@ -1,10 +1,7 @@
 var canvas = document.getElementById("canvas");
-//define the drawing context of the canvas element
-var ctx = canvas.getContext('2d');
+var ctx = canvas.getContext("2d");
 
-//draw stuff
-//sets up color and outline style
-ctx.fillStyle = "rgb(0,0,255)";
-ctx.strokeStyle = "black";
-ctx.linewidth = "5"; //dont have to specify px or inch
-
+ctx.fillStyle = "red";
+ctx.beginPath();
+ctx.arc(x, 300, 20, 0, 2 * Math.PI, true)
+ctx.fill()
