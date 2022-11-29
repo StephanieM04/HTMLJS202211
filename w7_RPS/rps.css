@@ -1,0 +1,12 @@
+html,body{
+    display: flex;
+    justify-content: center;
+   }
+canvas{
+       border: 1px solid black;
+    }
+
+nav{
+    display: flex;
+    justify-content: center;  
+}
