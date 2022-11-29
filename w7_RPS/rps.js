@@ -9,9 +9,13 @@ var hrock = new Image();
 var hpaper = new Image();
 var hscissors = new Image();
 
+var win = 0;
+var lose = 0;
+var tie = 0;
+
 rock.src = "images/rock.jpg"
-paper.src = "images/paper.jpg"
-scissors.src = "images/scissors.jpg"
+paper.src = "images/paper.png"
+scissors.src = "images/scissors.png"
 
 hrock.src = "images/rock2.jpg"
 hpaper.src = "images/paper2.jpg"
@@ -56,17 +60,22 @@ ctx.strokeText("welcome to the RPS game", canvas.width/2,280);
         ctx.clearRect(0,0,canvas.width,canvas.height);
         ctx.font = "30px Arial"
         ctx.textAlign = "center";
-        ctx.fillStyle = "pink";
+        ctx.fillStyle = "blue";
+
+        ctx.fillText("Rock Paper Scissors", canvas.width/2, 50);
+
         //player choice
         ctx.fillText("player choice", canvas.width/2, 100);
-        ctx.drawImage(rock, canvas.width/2 - 100, 150);
-        ctx.drawImage(paper, canvas.width/2, 150);
-        ctx.drawImage(scissors, canvas.width/2 + 100, 150);
+        ctx.drawImage(rock, canvas.width/2 - 300, 150);
+        
+        ctx.drawImage(paper, canvas.width/2 - 50, 150);
+        
+        ctx.drawImage(scissors, canvas.width/2 + 200, 150);
         //computer choices
         ctx.fillText("computer choice", canvas.width/2, 325);
-        ctx.drawImage(crock, canvas.width/2 - 100, 375);
-        ctx.drawImage(cpaper, canvas.width/2, 375);
-        ctx.drawImage(cscissors, canvas.width/2 + 100, 375);
+        ctx.drawImage(crock, canvas.width/2 - 300, 355);
+        ctx.drawImage(cpaper, canvas.width/2 - 50, 355);
+        ctx.drawImage(cscissors, canvas.width/2 + 200, 355);
 
         ctx.fillText(results, canvas.width/2, 525);
         ctx.restore();
@@ -111,11 +120,14 @@ function playGame(playerChoice) {
                         //alert("CPU chose rock, tie");
                         results = "CPU chose rock, tie";
                         draw(hrock,paper,scissors, hrock, paper, scissors);
+                        //tie = tie + 1
+                        
                     }
                     else if (cpuChoice == 1) {
                         //alert("CPU chose paper, you lose");
                         results = "CPU chose paper, you lose";
                         draw(hrock,paper,scissors, rock, hpaper, scissors);
+
                     }
                     else {
                         //alert("CPU chose scissor, you win");
