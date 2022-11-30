@@ -2,6 +2,10 @@ html,body{
     display: flex;
     justify-content: center;
     background-color: blueviolet;
+    background-image: url("images/land.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size:cover
    }
 canvas{
        border: 1px solid black;
@@ -11,4 +15,11 @@ canvas{
 nav{
     display: flex;
     justify-content: center;  
+}
+
+#counter{
+    display: flex;
+    justify-content: left;
+    color: black;
+    font-size: 20px;
 }
